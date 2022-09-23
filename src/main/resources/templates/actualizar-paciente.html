@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <title>Actualizar Paciente</title>
+</head>
+<body>
+<main>
+    <div class="px-4 py-3 my-2 text-center">
+        <h1 class="display-5 fw-bold mb-5">Actualizar Paciente</h1>
+        <div th:each="pacienteFind : ${pacienteFind}" class="col-lg-5 mx-auto">
+            <form th:action="@{/pacientes/{id}(id=${pacienteFind.documentoIdentidad})}" th:method="put" class="d-flex flex-column gap-3 align-items-center">
+                <div class="d-flex gap-1 justify-content-left">
+                    <label class="display-8 fw-bold mb-1">Documento:</label>
+                    <input th:field="*{pacienteFind.documentoIdentidad}" class="form-control" type="number" placeholder="Documento de identidad" disabled="true"/>
+                </div>
+                <input th:field="*{pacienteFind.nombre}" class="form-control"  type="text" placeholder="Nombre completo" />
+                <input th:field="*{pacienteFind.edad}" class="form-control"  type="number" placeholder="Edad" />
+                <input th:field="*{pacienteFind.telefono}" class="form-control"  type="tel" placeholder="Teléfono" />
+                <input th:field="*{pacienteFind.descripcionEnfermedad}" class="form-control"  type="text" placeholder="Descripción de enfermedad" />
+                <input th:field="*{pacienteFind.profesionales.registroMedico}" class="form-control"  type="number" placeholder="Registro del médico" />
+                <button class="btn btn-primary  px-4 gap-3"  type="submit">Actualizar paciente</button>
+                <a href="/pacientes" class="btn btn-outline-secondary px-4 gap-3"  type="submit">Cancelar</a>
+            </form>
+
+        </div>
+
+
+
+    </div>
+
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

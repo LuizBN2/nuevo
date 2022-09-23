@@ -1,0 +1,10 @@
+Configuración
+
+Proyecto: Hospital
+Clave: Ejercicio12022*
+
+Host: db.qpiybjxgfscifnrezacc.supabase.co
+Nombre de BD: postgres
+Puerto: 5432
+Usuario: postgres
+Clave: Ejercicio12022*
